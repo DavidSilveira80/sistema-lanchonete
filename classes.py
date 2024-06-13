@@ -41,35 +41,35 @@ class Prato:
 
 
 class Pizza(Prato):
-    def __init__(self, molho, recheio, borda, quantidade):
+    def __init__(self, molho, recheio, borda, quantidade, valor):
         super().__init__(quantidade)
         self.molho = molho
         self.recheio = recheio
         self.borda = borda
-        self.valor = 30.0
+        self.valor = valor
 
     def calcular_preco(self):
         return self.valor * self.quantidade
 
 
 class Salgadinho(Prato):
-    def __init__(self, recheio, massa, quantidate):
+    def __init__(self, recheio, massa, quantidate, valor):
         super().__init__(quantidate)
         self.recheio = recheio
         self.massa = massa
-        self.valor = 10.0
+        self.valor = valor
 
     def calcular_preco(self):
         return self.valor * self.quantidade
 
 
 class Lanche(Prato):
-    def __init__(self, pao, recheio, molho, quantidade):
+    def __init__(self, pao, recheio, molho, quantidade, valor):
         super().__init__(quantidade)
         self.pao = pao
         self.recheio = recheio
         self. molho = molho
-        self.valor = 25.0
+        self.valor = valor
 
     def calcular_preco(self):
         return self.valor * self.quantidade
@@ -79,15 +79,15 @@ if __name__ == '__main__':
     pedidos = []
     pedido = Pedido('David', 10.0)
 
-    pizza = Pizza('Catupiri', 'Portuguesa', 'Recheada', 2)
+    pizza = Pizza('Catupiri', 'Portuguesa', 'Recheada', 2, 30)
     pizza.registrar_consumo(pizza)
 
-    salgado = Salgadinho('Frango', 'Assado',  2)
+    salgado = Salgadinho('Frango', 'Assado',  2, 15)
     salgado.registrar_consumo(salgado)
 
-    lanche = Lanche('Salgado', 'Calabreza', 'Catupiry', 1)
+    lanche = Lanche('Salgado', 'Calabreza', 'Catupiry', 1, 25)
     lanche.registrar_consumo(lanche)
-    lanche1 = Lanche('Cervejinha', 'Tudo', 'Chedar', 2)
+    lanche1 = Lanche('Cervejinha', 'Tudo', 'Chedar', 2, 25)
     lanche1.registrar_consumo(lanche1)
     pedidos.append(pedido)
     print()
